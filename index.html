@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jules YZERD</title>
+  <meta name="description" content="Jules YZERD — Student, builder, curious." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛰️</text></svg>">
+  <style>
+    :root {
+      --bg: #f7f6f2;
+      --surface: #ffffff;
+      --fg: #1a1a18;
+      --muted: #6b6b68;
+      --subtle: #c8c7c0;
+      --accent: #1a1a18;
+      --link: #1a1a18;
+      --border: rgba(0,0,0,0.08);
+      --mono: 'DM Mono', monospace;
+      --sans: 'DM Sans', sans-serif;
+      --maxw: 720px;
+      --radius: 12px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111110;
+        --surface: #1c1c1a;
+        --fg: #e8e6df;
+        --muted: #8a8880;
+        --subtle: #3a3a36;
+        --border: rgba(255,255,255,0.07);
+        --link: #e8e6df;
+      }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--fg);
+      font-size: 15px;
+      line-height: 1.65;
+      font-weight: 300;
+      padding: 0 1.25rem;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--link); text-decoration: none; }
+
+    /* ─── LAYOUT ─── */
+    .wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+    }
+
+    /* ─── HEADER ─── */
+    header {
+      padding: 3.5rem 0 2.5rem;
+      opacity: 0;
+      transform: translateY(-10px);
+      animation: rise 0.7s ease forwards;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .name {
+      font-size: clamp(1.6rem, 4vw, 2rem);
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+    }
+
+    .name sup {
+      font-family: var(--mono);
+      font-size: 0.45em;
+      font-weight: 400;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      vertical-align: super;
+      margin-left: 4px;
+    }
+
+    .tagline {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.35rem;
+      letter-spacing: 0.01em;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+      padding-top: 0.25rem;
+      flex-shrink: 0;
+    }
+
+    nav a {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+      position: relative;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0; right: 0;
+      height: 1px;
+      background: var(--fg);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s ease;
+    }
+    nav a:hover { color: var(--fg); }
+    nav a:hover::after { transform: scaleX(1); }
+    nav a.active { color: var(--fg); }
+    nav a.active::after { transform: scaleX(1); }
+
+    /* ─── DIVIDER ─── */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0;
+    }
+
+    /* ─── SECTIONS ─── */
+    section {
+      padding: 3rem 0;
+      opacity: 0;
+      transform: translateY(16px);
+      animation: rise 0.6s ease forwards;
+    }
+    section:nth-of-type(1) { animation-delay: 0.15s; }
+    section:nth-of-type(2) { animation-delay: 0.28s; }
+    section:nth-of-type(3) { animation-delay: 0.41s; }
+    section:nth-of-type(4) { animation-delay: 0.54s; }
+    section:nth-of-type(5) { animation-delay: 0.67s; }
+    section:nth-of-type(6) { animation-delay: 0.80s; }
+
+    section + section { border-top: 1px solid var(--border); }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--muted);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ─── ABOUT ─── */
+    .about-photo {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid var(--border);
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+
+    .about-intro {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      max-width: 560px;
+    }
+
+    .about-intro strong {
+      font-weight: 500;
+    }
+
+    .about-links {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .pill-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.03em;
+      padding: 5px 12px;
+      border: 1px solid var(--subtle);
+      border-radius: 100px;
+      color: var(--muted);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .pill-link:hover {
+      border-color: var(--fg);
+      color: var(--fg);
+    }
+
+    /* ─── PROJECTS ─── */
+    .projects-grid {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.1rem 1.25rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: start;
+      gap: 0.5rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .project-card:hover {
+      border-color: var(--subtle);
+      transform: translateY(-2px);
+    }
+
+    .project-title {
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+
+    .project-desc {
+      font-size: 0.83rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .project-tag {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 2px 7px;
+      white-space: nowrap;
+    }
+
+    /* ─── NOTES ─── */
+    .notes-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .notes-list li {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 1.5rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.85rem;
+    }
+    .notes-list li:first-child { border-top: 1px solid var(--border); }
+
+    .note-date {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--muted);
+      padding-top: 2px;
+    }
+
+    /* ─── CONTACT ─── */
+    .contact-line {
+      font-size: 0.9rem;
+    }
+
+    .contact-line a {
+      border-bottom: 1px solid var(--subtle);
+      transition: border-color 0.2s;
+    }
+    .contact-line a:hover { border-color: var(--fg); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.5rem 0 3rem;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes rise {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      header, section { animation: none; opacity: 1; transform: none; }
+    }
+
+    @media (max-width: 480px) {
+      nav { gap: 1rem; }
+      .header-inner { flex-direction: column; gap: 1rem; }
+      .notes-list li { grid-template-columns: 80px 1fr; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="header-inner">
+      <div>
+        <div class="name">Jules YZERD<sup>🛰️</sup></div>
+        <div class="tagline">// student · builder · Bordeaux, FR</div>
+      </div>
+      <nav aria-label="Navigation">
+        <a href="#about">about</a>
+        <a href="#projects">projects</a>
+        <a href="#notes">notes</a>
+        <a href="#contact">contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <hr />
+
+  <main>
+
+    <section id="about">
+      <div class="section-label">About</div>
+      <p class="about-intro">
+        I'm Jules — high school student in France, passionate about <strong>AI</strong>, programming, crypto, space, and finance. I build things to learn things.
+      </p>
+      <br>
+      <p>If you work at Mistral, please take me on as an intern :)</p>
+
+      <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; max-width: 540px;">
+        <p style="font-size:0.85rem; color:var(--muted);">Currently working on:</p>
+        <div style="font-size:0.875rem; padding-left: 0.75rem; border-left: 2px solid var(--subtle);">
+          A platform to chat with AI models hosted on my <strong>Jetson Orin Nano Super</strong> — local inference, data sovereignty, no American cloud dependency.
+        </div>
+        <div style="font-size:0.875rem; padding-left: 0.75rem; border-left: 2px solid var(--subtle);">
+          A <strong>Linktree clone</strong> — cheaper, more customizable, GDPR-compliant.
+        </div>
+        <div style="font-size:0.875rem; padding-left: 0.75rem; border-left: 2px solid var(--subtle);">
+          A basic <strong>web browser</strong>, just because I can.
+        </div>
+      </div>
+
+      <div class="about-links">
+        <a class="pill-link" href="https://github.com/AZERDSQ131" target="_blank" rel="noopener">
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          AZERDSQ131
+        </a>
+        <a class="pill-link" href="https://huggingface.co/AZERDSQ" target="_blank" rel="noopener">
+          🤗 AZERDSQ
+        </a>
+        <a class="pill-link" href="https://www.linkedin.com/in/jules-yzerd-55131a346/" target="_blank" rel="noopener">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-label">Projects</div>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div>
+            <div class="project-title">BIA</div>
+            <div class="project-desc">Passed the Brevet d'Initiation Aéronautique at the minimum age of 14.</div>
+          </div>
+          <span class="project-tag">cert</span>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <div class="project-title">Investments</div>
+            <div class="project-desc">Bitcoin, Tesla, and a few other assets. Learning markets by participating in them.</div>
+          </div>
+          <span class="project-tag">finance</span>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <div class="project-title">My own cryptocurrency</div>
+            <div class="project-desc">Built a cryptocurrency from scratch — with its own blockchain, wallets, and peer-to-peer network.</div>
+          </div>
+          <span class="project-tag">crypto</span>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <div class="project-title">Local AI platform</div>
+            <div class="project-desc">Running Ollama on a Jetson Orin Nano Super (Qwen3, Mistral, etc.) with an OpenAI-compatible API server — private inference, zero cloud dependency.</div>
+          </div>
+          <span class="project-tag">hardware · ai</span>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="notes">
+      <div class="section-label">Notes</div>
+      <ul class="notes-list">
+        <li>
+          <span class="note-date">2026-05-19</span>
+          <span>Shipped v2 of this site.</span>
+        </li>
+        <li>
+          <span class="note-date">2025-09-03</span>
+          <span>Shipped v1.1 of this site.</span>
+        </li>
+        <li>
+          <span class="note-date">2025-08-21</span>
+          <span>Built this site in plain HTML + CSS. No no-code software.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <div class="section-label">Contact</div>
+      <p class="contact-line">
+        <a href="mailto:j.yzerd@outlook.fr">j.yzerd@outlook.fr</a>
+      </p>
+      <p style="font-size:0.83rem;color:var(--muted);margin-top:0.5rem;">Open to discussions about code, AI, and interesting projects.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <span>© <span id="y"></span> Jules YZERD</span>
+    <span>Built in HTML + CSS · Hosted on GitHub Pages</span>
+  </footer>
+
+</div>
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+  function setActive() {
+    const h = location.hash || '#about';
+    document.querySelectorAll('nav a').forEach(a =>
+      a.classList.toggle('active', a.getAttribute('href') === h)
+    );
+  }
+  window.addEventListener('hashchange', setActive);
+  setActive();
+</script>
+</body>
+</html>
