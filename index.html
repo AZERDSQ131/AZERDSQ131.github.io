@@ -9,369 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛰️</text></svg>">
-  <style>
-    :root {
-      --bg: #f7f6f2;
-      --surface: #ffffff;
-      --fg: #1a1a18;
-      --muted: #6b6b68;
-      --subtle: #c8c7c0;
-      --accent: #1a1a18;
-      --link: #1a1a18;
-      --border: rgba(0,0,0,0.08);
-      --mono: 'DM Mono', monospace;
-      --sans: 'DM Sans', sans-serif;
-      --maxw: 720px;
-      --radius: 12px;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #111110;
-        --surface: #1c1c1a;
-        --fg: #e8e6df;
-        --muted: #8a8880;
-        --subtle: #3a3a36;
-        --border: rgba(255,255,255,0.07);
-        --link: #e8e6df;
-      }
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: var(--sans);
-      background: var(--bg);
-      color: var(--fg);
-      font-size: 15px;
-      line-height: 1.65;
-      font-weight: 300;
-      padding: 0 1.25rem;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a { color: var(--link); text-decoration: none; }
-
-    /* ─── LAYOUT ─── */
-    .wrap {
-      max-width: var(--maxw);
-      margin: 0 auto;
-    }
-
-    /* ─── HEADER ─── */
-    header {
-      padding: 3.5rem 0 2.5rem;
-      opacity: 0;
-      transform: translateY(-10px);
-      animation: rise 0.7s ease forwards;
-    }
-
-    .header-inner {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .name {
-      font-size: clamp(1.6rem, 4vw, 2rem);
-      font-weight: 500;
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-    }
-
-    .name sup {
-      font-family: var(--mono);
-      font-size: 0.45em;
-      font-weight: 400;
-      color: var(--muted);
-      letter-spacing: 0.05em;
-      vertical-align: super;
-      margin-left: 4px;
-    }
-
-    .tagline {
-      font-family: var(--mono);
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-top: 0.35rem;
-      letter-spacing: 0.01em;
-    }
-
-    nav {
-      display: flex;
-      gap: 1.5rem;
-      padding-top: 0.25rem;
-      flex-shrink: 0;
-    }
-
-    nav a {
-      font-family: var(--mono);
-      font-size: 0.75rem;
-      color: var(--muted);
-      letter-spacing: 0.04em;
-      transition: color 0.2s;
-      position: relative;
-    }
-    nav a::after {
-      content: '';
-      position: absolute;
-      bottom: -2px; left: 0; right: 0;
-      height: 1px;
-      background: var(--fg);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.25s ease;
-    }
-    nav a:hover { color: var(--fg); }
-    nav a:hover::after { transform: scaleX(1); }
-    nav a.active { color: var(--fg); }
-    nav a.active::after { transform: scaleX(1); }
-
-    /* ─── DIVIDER ─── */
-    hr {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 0;
-    }
-
-    /* ─── SECTIONS ─── */
-    section {
-      padding: 3rem 0;
-      opacity: 0;
-      transform: translateY(16px);
-      animation: rise 0.6s ease forwards;
-    }
-    section:nth-of-type(1) { animation-delay: 0.15s; }
-    section:nth-of-type(2) { animation-delay: 0.28s; }
-    section:nth-of-type(3) { animation-delay: 0.41s; }
-    section:nth-of-type(4) { animation-delay: 0.54s; }
-    section:nth-of-type(5) { animation-delay: 0.67s; }
-    section:nth-of-type(6) { animation-delay: 0.80s; }
-
-    section + section { border-top: 1px solid var(--border); }
-
-    .section-label {
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      color: var(--muted);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-    }
-
-    /* ─── ABOUT ─── */
-    .about-photo {
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 1px solid var(--border);
-      margin-bottom: 1.25rem;
-      display: block;
-    }
-
-    .about-intro {
-      font-size: 1.05rem;
-      line-height: 1.75;
-      max-width: 560px;
-    }
-
-    .about-intro strong {
-      font-weight: 500;
-    }
-
-    .about-links {
-      display: flex;
-      gap: 0.75rem;
-      margin-top: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .pill-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-family: var(--mono);
-      font-size: 0.72rem;
-      letter-spacing: 0.03em;
-      padding: 5px 12px;
-      border: 1px solid var(--subtle);
-      border-radius: 100px;
-      color: var(--muted);
-      transition: border-color 0.2s, color 0.2s;
-    }
-    .pill-link:hover {
-      border-color: var(--fg);
-      color: var(--fg);
-    }
-
-    /* ─── PROJECTS ─── */
-    .projects-grid {
-      display: grid;
-      gap: 0.75rem;
-    }
-
-    .project-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.1rem 1.25rem;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: start;
-      gap: 0.5rem;
-      transition: border-color 0.2s, transform 0.2s;
-    }
-    .project-card:hover {
-      border-color: var(--subtle);
-      transform: translateY(-2px);
-    }
-
-    .project-title {
-      font-size: 0.9rem;
-      font-weight: 500;
-      margin-bottom: 0.25rem;
-    }
-
-    .project-desc {
-      font-size: 0.83rem;
-      color: var(--muted);
-      line-height: 1.5;
-    }
-
-    .project-tag {
-      font-family: var(--mono);
-      font-size: 0.65rem;
-      color: var(--muted);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 2px 7px;
-      white-space: nowrap;
-    }
-
-    a.project-card { display: grid; }
-
-    /* ─── OPEN SOURCE ─── */
-    .oss-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-
-    .oss-list li {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: center;
-      gap: 1rem;
-      padding: 0.75rem 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 0.85rem;
-    }
-    .oss-list li:first-child { border-top: 1px solid var(--border); }
-
-    .oss-repo {
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      color: var(--muted);
-      display: block;
-      margin-bottom: 2px;
-    }
-
-    .oss-status {
-      font-family: var(--mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.04em;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 2px 7px;
-      white-space: nowrap;
-      color: var(--muted);
-    }
-    .oss-status.merged { color: #2f9e44; border-color: #2f9e4440; }
-
-    .gh-stats {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-top: 1.75rem;
-    }
-    .gh-stats img {
-      flex: 1 1 280px;
-      max-width: 100%;
-      height: auto;
-      border-radius: var(--radius);
-    }
-
-    /* ─── NOTES ─── */
-    .notes-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-
-    .notes-list li {
-      display: grid;
-      grid-template-columns: 90px 1fr;
-      gap: 1.5rem;
-      padding: 0.75rem 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 0.85rem;
-    }
-    .notes-list li:first-child { border-top: 1px solid var(--border); }
-
-    .note-date {
-      font-family: var(--mono);
-      font-size: 0.72rem;
-      color: var(--muted);
-      padding-top: 2px;
-    }
-
-    /* ─── CONTACT ─── */
-    .contact-line {
-      font-size: 0.9rem;
-    }
-
-    .contact-line a {
-      border-bottom: 1px solid var(--subtle);
-      transition: border-color 0.2s;
-    }
-    .contact-line a:hover { border-color: var(--fg); }
-
-    /* ─── FOOTER ─── */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 1.5rem 0 3rem;
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      color: var(--muted);
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    /* ─── ANIMATIONS ─── */
-    @keyframes rise {
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      header, section { animation: none; opacity: 1; transform: none; }
-    }
-
-    @media (max-width: 480px) {
-      nav { gap: 1rem; }
-      .header-inner { flex-direction: column; gap: 1rem; }
-      .notes-list li { grid-template-columns: 80px 1fr; gap: 1rem; }
-      .oss-list li { grid-template-columns: 1fr; align-items: flex-start; gap: 0.4rem; }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 <div class="wrap">
@@ -385,8 +23,8 @@
       <nav aria-label="Navigation">
         <a href="#about">about</a>
         <a href="#mistral">mistral</a>
-        <a href="#projects">projects</a>
-        <a href="#opensource">open source</a>
+        <a href="projects.html">projects</a>
+        <a href="opensource.html">open source</a>
         <a href="#notes">notes</a>
         <a href="#contact">contact</a>
       </nav>
@@ -407,14 +45,14 @@
 
       <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; max-width: 540px;">
         <p style="font-size:0.85rem; color:var(--muted);">Currently working on:</p>
-        <div style="font-size:0.875rem; padding-left: 0.75rem; border-left: 2px solid var(--subtle);">
-          A platform to chat with AI models hosted on my <strong>Jetson Orin Nano Super</strong> — local inference, data sovereignty, no American cloud dependency.
+        <div style="font-size:0.875rem; padding-left: 0.75rem; border-left: 2px solid var(--accent);">
+          A chat UI for the models running on my <strong>Jetson Orin Nano Super</strong> — the inference stack is already up, now building the interface layer on top of it.
         </div>
-        <div style="font-size:0.875rem; padding-left: 0.75rem; border-left: 2px solid var(--subtle);">
-          A <strong>Linktree clone</strong> — cheaper, more customizable, GDPR-compliant.
+        <div style="font-size:0.875rem; padding-left: 0.75rem; border-left: 2px solid var(--accent);">
+          A <strong>Linktree-style link page</strong> — cheaper, fully customizable, GDPR-compliant by default.
         </div>
-        <div style="font-size:0.875rem; padding-left: 0.75rem; border-left: 2px solid var(--subtle);">
-          A basic <strong>web browser</strong>, just because I can.
+        <div style="font-size:0.875rem; padding-left: 0.75rem; border-left: 2px solid var(--accent);">
+          A toy <strong>browser engine</strong>, mostly to understand how rendering actually works under the hood.
         </div>
       </div>
 
@@ -447,9 +85,30 @@
     <section id="mistral">
       <div class="section-label">Mistral</div>
       <p class="about-intro" style="font-size:0.95rem;">
-        Applied for a <strong>stage de seconde</strong> at Mistral — sat a coding test and had a video interview with their Head of Engineering. Now competing (solo, for now) at the <strong>Mistral Vibe Hackathon</strong> in Paris on July 18.
+        In early 2026, I reached out directly to Mistral AI to set up a <strong>2-week internship</strong> (stage de seconde) as part of my mandatory high school program — got an introduction through contacts at their Bordeaux office, with the official process run by <strong>Akanksha Duggal</strong> (TA Operations).
       </p>
-      <p style="font-size:0.83rem; color:var(--muted); margin-top:0.6rem;">
+
+      <div style="margin-top: 1.25rem; display: flex; flex-direction: column; gap: 0.6rem; max-width: 560px;">
+        <p style="font-size:0.85rem; color:var(--muted);">The process:</p>
+        <div style="font-size:0.875rem; padding-left: 0.75rem; border-left: 2px solid var(--subtle);">
+          CV review
+        </div>
+        <div style="font-size:0.875rem; padding-left: 0.75rem; border-left: 2px solid var(--subtle);">
+          A CodeSignal technical assessment — 4 algorithm exercises in Python, 90 minutes — scored <strong>466/600</strong>
+        </div>
+        <div style="font-size:0.875rem; padding-left: 0.75rem; border-left: 2px solid var(--subtle);">
+          A final interview with <strong>Lelio</strong>, Head of Engineering, about my background, projects, and goals
+        </div>
+      </div>
+
+      <p style="font-size:0.875rem; margin-top:1.25rem; max-width:560px;">
+        <strong>The outcome:</strong> I completed the full process, but it couldn't move forward — Mistral requires a minimum 3-month commitment, and my school schedule only allowed for 2 weeks. A timing constraint, not a skills one.
+      </p>
+
+      <p style="font-size:0.83rem; color:var(--muted); margin-top:1.25rem;">
+        Independently of the application, I kept contributing to <strong>mistral-vibe</strong> on GitHub — and I'm now competing (solo, for now) at the <strong>Mistral Vibe Hackathon</strong> in Paris on July 18.
+      </p>
+      <p style="font-size:0.83rem; color:var(--muted); margin-top:0.4rem;">
         Open to teaming up — <a href="mailto:j.yzerd@outlook.fr?subject=Mistral%20Vibe%20Hackathon" style="border-bottom:1px solid var(--subtle);">drop me a line</a>.
       </p>
 
@@ -554,15 +213,12 @@
           <span class="project-tag">hardware · ai</span>
         </div>
 
-        <div class="project-card">
-          <div>
-            <div class="project-title">BIA</div>
-            <div class="project-desc">Passed the Brevet d'Initiation Aéronautique at the minimum age of 14.</div>
-          </div>
-          <span class="project-tag">cert</span>
-        </div>
-
       </div>
+
+      <a class="btn-more" href="projects.html">
+        See all projects
+        <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
     </section>
 
     <section id="opensource">
@@ -585,36 +241,21 @@
           </span>
           <a class="oss-status" href="https://github.com/anthropics/claude-code/pull/68786" target="_blank" rel="noopener">open</a>
         </li>
-        <li>
-          <span>
-            <span class="oss-repo">anthropics/claude-code #68679</span>
-            Strip control characters before promise comparison
-          </span>
-          <a class="oss-status" href="https://github.com/anthropics/claude-code/pull/68679" target="_blank" rel="noopener">open</a>
-        </li>
-        <li>
-          <span>
-            <span class="oss-repo">anthropics/claude-code #68701</span>
-            Strip CRLF from Python version probe on Windows
-          </span>
-          <a class="oss-status" href="https://github.com/anthropics/claude-code/pull/68701" target="_blank" rel="noopener">open</a>
-        </li>
-        <li>
-          <span>
-            <span class="oss-repo">anthropics/claude-code #68690</span>
-            Correct state file path in help.md
-          </span>
-          <a class="oss-status" href="https://github.com/anthropics/claude-code/pull/68690" target="_blank" rel="noopener">open</a>
-        </li>
       </ul>
-      <p style="font-size:0.78rem; margin-top:1rem;">
-        <a class="contact-line" href="https://github.com/AZERDSQ131?tab=overview" target="_blank" rel="noopener" style="border-bottom:1px solid var(--subtle);">See all activity on GitHub →</a>
-      </p>
+
+      <a class="btn-more" href="opensource.html">
+        See all contributions
+        <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
     </section>
 
     <section id="notes">
       <div class="section-label">Notes</div>
       <ul class="notes-list">
+        <li>
+          <span class="note-date">2026-06-24</span>
+          <span>Shipped v4 — split Projects and Open Source into their own pages, refreshed the Mistral story, small design pass.</span>
+        </li>
         <li>
           <span class="note-date">2026-06-24</span>
           <span>Shipped v3 — added open source section and GitHub stats, swapped fake projects for real repos.</span>

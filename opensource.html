@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Open Source — Jules YZERD</title>
+  <meta name="description" content="Jules YZERD — Open source contributions." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛰️</text></svg>">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="header-inner">
+      <div>
+        <div class="name">Jules YZERD<sup>🛰️</sup></div>
+        <div class="tagline">// student · open-source contributor · Bordeaux, FR</div>
+      </div>
+      <nav aria-label="Navigation">
+        <a href="index.html#about">about</a>
+        <a href="index.html#mistral">mistral</a>
+        <a href="projects.html">projects</a>
+        <a href="opensource.html" class="active">open source</a>
+        <a href="index.html#notes">notes</a>
+        <a href="index.html#contact">contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <hr />
+
+  <main>
+
+    <section>
+      <a class="back-link" href="index.html">
+        <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 8H3M7 4L3 8l4 4"/></svg>
+        Back to portfolio
+      </a>
+      <div class="section-label">Open Source</div>
+      <p style="font-size:0.875rem; color:var(--muted); max-width:560px; margin-bottom:1.75rem;">
+        Fixes and small features I've sent upstream. mistral-vibe PRs are covered in the <a href="index.html#mistral" style="border-bottom:1px solid var(--subtle);">Mistral section</a> — everything else is here.
+      </p>
+
+      <ul class="oss-list">
+        <li>
+          <span>
+            <span class="oss-repo">AZERDSQ131/EPONA-mobile #1</span>
+            Refonte carte + affichage animal dans CR
+          </span>
+          <a class="oss-status merged" href="https://github.com/AZERDSQ131/EPONA-mobile/pull/1" target="_blank" rel="noopener">merged</a>
+        </li>
+        <li>
+          <span>
+            <span class="oss-repo">anthropics/claude-code #68785</span>
+            Hook JSON to stdout, tighten su* glob, fix CI detection and JSON injection in examples
+          </span>
+          <a class="oss-status" href="https://github.com/anthropics/claude-code/pull/68785" target="_blank" rel="noopener">open</a>
+        </li>
+        <li>
+          <span>
+            <span class="oss-repo">anthropics/claude-code #68786</span>
+            Avoid shell injection in test-hook.sh via stdin redirection
+          </span>
+          <a class="oss-status" href="https://github.com/anthropics/claude-code/pull/68786" target="_blank" rel="noopener">open</a>
+        </li>
+        <li>
+          <span>
+            <span class="oss-repo">anthropics/claude-code #68707</span>
+            feat(bug-reporter): add /bug command to file GitHub issues from the terminal
+          </span>
+          <a class="oss-status" href="https://github.com/anthropics/claude-code/pull/68707" target="_blank" rel="noopener">open</a>
+        </li>
+        <li>
+          <span>
+            <span class="oss-repo">anthropics/claude-code #68702</span>
+            Guard PROMPT_PARTS expansion against set -u on bash 3.x (macOS)
+          </span>
+          <a class="oss-status" href="https://github.com/anthropics/claude-code/pull/68702" target="_blank" rel="noopener">open</a>
+        </li>
+        <li>
+          <span>
+            <span class="oss-repo">anthropics/claude-code #68701</span>
+            Strip CRLF from Python version probe on Windows
+          </span>
+          <a class="oss-status" href="https://github.com/anthropics/claude-code/pull/68701" target="_blank" rel="noopener">open</a>
+        </li>
+        <li>
+          <span>
+            <span class="oss-repo">anthropics/claude-code #68694</span>
+            Normalize CLAUDE_PLUGIN_ROOT path separators on Windows
+          </span>
+          <a class="oss-status" href="https://github.com/anthropics/claude-code/pull/68694" target="_blank" rel="noopener">open</a>
+        </li>
+        <li>
+          <span>
+            <span class="oss-repo">anthropics/claude-code #68693</span>
+            Add duplicate label additively, don't replace existing labels
+          </span>
+          <a class="oss-status" href="https://github.com/anthropics/claude-code/pull/68693" target="_blank" rel="noopener">open</a>
+        </li>
+        <li>
+          <span>
+            <span class="oss-repo">anthropics/claude-code #68690</span>
+            Correct state file path in help.md
+          </span>
+          <a class="oss-status" href="https://github.com/anthropics/claude-code/pull/68690" target="_blank" rel="noopener">open</a>
+        </li>
+        <li>
+          <span>
+            <span class="oss-repo">anthropics/claude-code #68689</span>
+            Block symlink escape in extensibility config reads
+          </span>
+          <a class="oss-status" href="https://github.com/anthropics/claude-code/pull/68689" target="_blank" rel="noopener">open</a>
+        </li>
+        <li>
+          <span>
+            <span class="oss-repo">anthropics/claude-code #68679</span>
+            Strip control characters before promise comparison
+          </span>
+          <a class="oss-status" href="https://github.com/anthropics/claude-code/pull/68679" target="_blank" rel="noopener">open</a>
+        </li>
+        <li>
+          <span>
+            <span class="oss-repo">anthropics/claude-code #68673</span>
+            Break pagination when page is not full, not only when empty
+          </span>
+          <a class="oss-status" href="https://github.com/anthropics/claude-code/pull/68673" target="_blank" rel="noopener">open</a>
+        </li>
+      </ul>
+
+      <p style="font-size:0.78rem; margin-top:1.25rem;">
+        <a href="https://github.com/AZERDSQ131?tab=overview" target="_blank" rel="noopener" style="border-bottom:1px solid var(--subtle);">See all activity on GitHub →</a>
+      </p>
+    </section>
+
+    <section id="contact">
+      <div class="section-label">Contact</div>
+      <p class="contact-line">
+        <a href="mailto:j.yzerd@outlook.fr">j.yzerd@outlook.fr</a>
+      </p>
+      <p style="font-size:0.83rem;color:var(--muted);margin-top:0.5rem;">Open to discussions about code, AI, and interesting projects.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <span>© <span id="y"></span> Jules YZERD</span>
+    <span>Built in HTML + CSS · Hosted on GitHub Pages</span>
+  </footer>
+
+</div>
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
