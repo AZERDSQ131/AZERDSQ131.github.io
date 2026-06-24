@@ -384,6 +384,7 @@
       </div>
       <nav aria-label="Navigation">
         <a href="#about">about</a>
+        <a href="#mistral">mistral</a>
         <a href="#projects">projects</a>
         <a href="#opensource">open source</a>
         <a href="#notes">notes</a>
@@ -443,17 +444,17 @@
       </div>
     </section>
 
-    <section id="projects">
-      <div class="section-label">Projects</div>
-      <div class="projects-grid">
+    <section id="mistral">
+      <div class="section-label">Mistral</div>
+      <p class="about-intro" style="font-size:0.95rem;">
+        Applied for a <strong>stage de seconde</strong> at Mistral — sat a coding test and had a video interview with their Head of Engineering. Now competing (solo, for now) at the <strong>Mistral Vibe Hackathon</strong> in Paris on July 18.
+      </p>
+      <p style="font-size:0.83rem; color:var(--muted); margin-top:0.6rem;">
+        Open to teaming up — <a href="mailto:j.yzerd@outlook.fr?subject=Mistral%20Vibe%20Hackathon" style="border-bottom:1px solid var(--subtle);">drop me a line</a>.
+      </p>
 
-        <a class="project-card" href="https://github.com/AZERDSQ131/tokenbar" target="_blank" rel="noopener">
-          <div>
-            <div class="project-title">tokenbar</div>
-            <div class="project-desc">Live AI token usage and cost tracking in your macOS menu bar.</div>
-          </div>
-          <span class="project-tag">python</span>
-        </a>
+      <p style="font-size:0.78rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.08em; margin-top:1.75rem; margin-bottom:0.9rem;">Built with the Mistral API</p>
+      <div class="projects-grid">
 
         <a class="project-card" href="https://github.com/AZERDSQ131/VoxAgent" target="_blank" rel="noopener">
           <div>
@@ -467,6 +468,72 @@
           <div>
             <div class="project-title">spill</div>
             <div class="project-desc">macOS voice dictation via the Fn key, transcribed by Mistral Voxtral.</div>
+          </div>
+          <span class="project-tag">python</span>
+        </a>
+
+        <a class="project-card" href="https://github.com/AZERDSQ131/mistral-vibe-app" target="_blank" rel="noopener">
+          <div>
+            <div class="project-title">mistral-vibe-app</div>
+            <div class="project-desc">Desktop wrapper for Mistral Vibe — built with Tauri v2.</div>
+          </div>
+          <span class="project-tag">javascript</span>
+        </a>
+
+        <a class="project-card" href="https://github.com/Soch126/mistral-chef/pull/1" target="_blank" rel="noopener">
+          <div>
+            <div class="project-title">mistral-chef</div>
+            <div class="project-desc">Contributed a photo-based ingredient recognition feature — merged.</div>
+          </div>
+          <span class="project-tag">merged pr</span>
+        </a>
+
+      </div>
+
+      <p style="font-size:0.78rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.08em; margin-top:1.75rem; margin-bottom:0.9rem;">Contributions to mistral-vibe</p>
+      <ul class="oss-list">
+        <li>
+          <span>
+            <span class="oss-repo">mistralai/mistral-vibe #806</span>
+            Resample narrator audio to device native sample rate
+          </span>
+          <a class="oss-status" href="https://github.com/mistralai/mistral-vibe/pull/806" target="_blank" rel="noopener">open</a>
+        </li>
+        <li>
+          <span>
+            <span class="oss-repo">mistralai/mistral-vibe #789</span>
+            Pass reasoning_effort in OpenAI-compatible backend payload
+          </span>
+          <a class="oss-status" href="https://github.com/mistralai/mistral-vibe/pull/789" target="_blank" rel="noopener">open</a>
+        </li>
+        <li>
+          <span>
+            <span class="oss-repo">mistralai/mistral-vibe #783</span>
+            Strip bracketed IPv6 entries from NO_PROXY to prevent startup crash
+          </span>
+          <a class="oss-status" href="https://github.com/mistralai/mistral-vibe/pull/783" target="_blank" rel="noopener">open</a>
+        </li>
+        <li>
+          <span>
+            <span class="oss-repo">mistralai/mistral-vibe #780</span>
+            Add configurable cost_currency display setting
+          </span>
+          <a class="oss-status" href="https://github.com/mistralai/mistral-vibe/pull/780" target="_blank" rel="noopener">open</a>
+        </li>
+      </ul>
+      <p style="font-size:0.78rem; margin-top:1rem;">
+        <a href="https://github.com/mistralai/mistral-vibe/pulls?q=is%3Apr+author%3AAZERDSQ131" target="_blank" rel="noopener" style="border-bottom:1px solid var(--subtle);">See all my mistral-vibe pull requests →</a>
+      </p>
+    </section>
+
+    <section id="projects">
+      <div class="section-label">Projects</div>
+      <div class="projects-grid">
+
+        <a class="project-card" href="https://github.com/AZERDSQ131/tokenbar" target="_blank" rel="noopener">
+          <div>
+            <div class="project-title">tokenbar</div>
+            <div class="project-desc">Live AI token usage and cost tracking in your macOS menu bar.</div>
           </div>
           <span class="project-tag">python</span>
         </a>
@@ -501,7 +568,7 @@
     <section id="opensource">
       <div class="section-label">Open Source</div>
       <p style="font-size:0.875rem; color:var(--muted); max-width:560px; margin-bottom:1.25rem;">
-        I contribute fixes and small features upstream — mostly to <strong>mistral-vibe</strong> (Mistral's CLI coding agent) and <strong>Claude Code</strong>, plus the occasional PR to friends' projects.
+        I contribute fixes and small features upstream — see the <a href="#mistral" style="border-bottom:1px solid var(--subtle);">Mistral section</a> for mistral-vibe PRs, and <strong>Claude Code</strong> below.
       </p>
       <ul class="oss-list">
         <li>
@@ -510,27 +577,6 @@
             Refonte carte + affichage animal dans CR
           </span>
           <a class="oss-status merged" href="https://github.com/AZERDSQ131/EPONA-mobile/pull/1" target="_blank" rel="noopener">merged</a>
-        </li>
-        <li>
-          <span>
-            <span class="oss-repo">Soch126/mistral-chef #1</span>
-            Ajout d'un bouton photo pour identifier les ingrédients
-          </span>
-          <a class="oss-status merged" href="https://github.com/Soch126/mistral-chef/pull/1" target="_blank" rel="noopener">merged</a>
-        </li>
-        <li>
-          <span>
-            <span class="oss-repo">mistralai/mistral-vibe #780</span>
-            Add configurable cost_currency display setting
-          </span>
-          <a class="oss-status" href="https://github.com/mistralai/mistral-vibe/pull/780" target="_blank" rel="noopener">open</a>
-        </li>
-        <li>
-          <span>
-            <span class="oss-repo">mistralai/mistral-vibe #783</span>
-            Strip bracketed IPv6 entries from NO_PROXY to prevent startup crash
-          </span>
-          <a class="oss-status" href="https://github.com/mistralai/mistral-vibe/pull/783" target="_blank" rel="noopener">open</a>
         </li>
         <li>
           <span>
@@ -545,6 +591,20 @@
             Strip control characters before promise comparison
           </span>
           <a class="oss-status" href="https://github.com/anthropics/claude-code/pull/68679" target="_blank" rel="noopener">open</a>
+        </li>
+        <li>
+          <span>
+            <span class="oss-repo">anthropics/claude-code #68701</span>
+            Strip CRLF from Python version probe on Windows
+          </span>
+          <a class="oss-status" href="https://github.com/anthropics/claude-code/pull/68701" target="_blank" rel="noopener">open</a>
+        </li>
+        <li>
+          <span>
+            <span class="oss-repo">anthropics/claude-code #68690</span>
+            Correct state file path in help.md
+          </span>
+          <a class="oss-status" href="https://github.com/anthropics/claude-code/pull/68690" target="_blank" rel="noopener">open</a>
         </li>
       </ul>
       <p style="font-size:0.78rem; margin-top:1rem;">
