@@ -50,10 +50,10 @@
       <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; max-width: 540px;">
         <p style="font-size:0.85rem; color:var(--muted);">Currently working on:</p>
         <div style="font-size:0.875rem; padding-left: 0.75rem; border-left: 2px solid var(--accent);">
-          <a href="https://github.com/AZERDSQ131/tokenbar" target="_blank" rel="noopener" style="font-weight:500;">tokenbar</a> — live AI token usage and cost tracking in your macOS menu bar.
+          <a href="https://github.com/AZERDSQ131/mcpm" target="_blank" rel="noopener" style="font-weight:500;">mcpm</a> — universal MCP server manager, install/configure/update across all your AI clients in one command. Published as <code>mcp-fleet</code> on npm.
         </div>
         <div style="font-size:0.875rem; padding-left: 0.75rem; border-left: 2px solid var(--accent);">
-          <a href="https://github.com/AZERDSQ131/spill" target="_blank" rel="noopener" style="font-weight:500;">spill</a> — macOS voice dictation via the Fn key, transcribed by Mistral Voxtral.
+          <a href="https://github.com/AZERDSQ131/scope" target="_blank" rel="noopener" style="font-weight:500;">scope</a> — neofetch for your codebase: tech stack, git history, file structure, and dependencies in one command.
         </div>
       </div>
 
@@ -197,6 +197,22 @@
       <div class="section-label">Projects</div>
       <div class="projects-grid">
 
+        <a class="project-card" href="https://github.com/AZERDSQ131/mcpm" target="_blank" rel="noopener">
+          <div>
+            <div class="project-title">mcpm</div>
+            <div class="project-desc">Universal MCP server manager — install, configure, and update MCP servers across Claude Code, Cursor, VS Code, and more.</div>
+          </div>
+          <span class="project-tag">typescript · npm · 6★</span>
+        </a>
+
+        <a class="project-card" href="https://github.com/AZERDSQ131/scope" target="_blank" rel="noopener">
+          <div>
+            <div class="project-title">scope</div>
+            <div class="project-desc">Neofetch for your codebase — instant tech stack, git history, file structure, and dependency overview.</div>
+          </div>
+          <span class="project-tag">typescript · 2★</span>
+        </a>
+
         <a class="project-card" href="https://github.com/AZERDSQ131/tokenbar" target="_blank" rel="noopener">
           <div>
             <div class="project-title">tokenbar</div>
@@ -204,22 +220,6 @@
           </div>
           <span class="project-tag">python</span>
         </a>
-
-        <div class="project-card">
-          <div>
-            <div class="project-title">EPONA</div>
-            <div class="project-desc">Mobile + web platform for veterinarians — Next.js dashboard and React Native field app.</div>
-          </div>
-          <span class="project-tag">typescript · private</span>
-        </div>
-
-        <div class="project-card">
-          <div>
-            <div class="project-title">Local AI platform</div>
-            <div class="project-desc">Running Ollama on a Jetson Orin Nano Super (Qwen3, Mistral, etc.) with an OpenAI-compatible API server — private inference, zero cloud dependency.</div>
-          </div>
-          <span class="project-tag">hardware · ai</span>
-        </div>
 
       </div>
 
@@ -232,7 +232,7 @@
     <section id="opensource">
       <div class="section-label">Open Source</div>
       <p style="font-size:0.875rem; color:var(--muted); max-width:560px; margin-bottom:1.25rem;">
-        I contribute fixes and small features upstream — see the <a href="#mistral" style="border-bottom:1px solid var(--subtle);">Mistral section</a> for mistral-vibe PRs, and <strong>Claude Code</strong> below.
+        <strong>22 PRs</strong> to Claude Code, <strong>22</strong> to mistral-vibe (see the <a href="#mistral" style="border-bottom:1px solid var(--subtle);">Mistral section</a>), plus a couple of merged fixes elsewhere.
       </p>
       <ul class="oss-list">
         <li>
@@ -260,6 +260,10 @@
     <section id="notes">
       <div class="section-label">Notes</div>
       <ul class="notes-list">
+        <li>
+          <span class="note-date">2026-07-06</span>
+          <span>Shipped v5 — added a blog section and rebuilt Projects/Open Source around real GitHub data (mcpm, scope, and the actual PR counts).</span>
+        </li>
         <li>
           <span class="note-date">2026-06-24</span>
           <span>Shipped v4 — split Projects and Open Source into their own pages, refreshed the Mistral story, small design pass.</span>
