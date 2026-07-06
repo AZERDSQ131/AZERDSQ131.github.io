@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Blog — Jules YZERD</title>
-  <meta name="description" content="Jules YZERD — Blog." />
+  <title>Hello, blog — Jules YZERD</title>
+  <meta name="description" content="First post on Jules YZERD's blog." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛰️</text></svg>">
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
 <div class="wrap">
@@ -18,34 +18,31 @@
     <div class="name">Jules <em>Yzerd</em></div>
     <div class="tagline">// student · building with AI agents · Bordeaux, FR</div>
     <nav aria-label="Navigation">
-      <a href="index.html#about">about</a>
-      <a href="projects.html">projects</a>
-      <a href="opensource.html">open source</a>
-      <a href="blog.html" class="active">blog</a>
-      <a href="index.html#contact">contact</a>
+      <a href="../index.html#about">about</a>
+      <a href="../projects.html">projects</a>
+      <a href="../opensource.html">open source</a>
+      <a href="../blog.html" class="active">blog</a>
+      <a href="../index.html#contact">contact</a>
     </nav>
   </header>
 
   <main>
 
     <section>
-      <a class="back-link" href="index.html">
+      <a class="back-link" href="../blog.html">
         <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 8H3M7 4L3 8l4 4"/></svg>
-        Back to portfolio
+        Back to blog
       </a>
-      <div class="section-label">Blog</div>
-      <p class="prose" style="margin-bottom:0;">
-        Notes on what I'm building, learning, and shipping — longer form than the notes log.
-      </p>
 
-      <div class="row-list">
-        <a class="row" href="posts/hello-blog.html">
-          <div class="row-main">
-            <div class="row-title">Hello, blog <span class="row-title-arrow">→</span></div>
-            <div class="row-desc">First post — this section just went live. Expect write-ups on AI coding agents, the Mistral Vibe Hackathon prep, and whatever I'm debugging that week.</div>
-          </div>
-          <div class="row-meta">2026-07-06</div>
-        </a>
+      <div class="post-header">
+        <div class="post-date">2026-07-06</div>
+        <h1 class="post-title">Hello, blog</h1>
+      </div>
+
+      <div class="post-body">
+        <p>This section just went live. It's the longer-form counterpart to the notes log on the homepage — that one's for one-line "shipped X" entries, this one's for anything that needs more than a sentence.</p>
+        <p>Expect write-ups on <strong>AI coding agents</strong> (Claude Code, Mistral Vibe, OpenCode — I use all three daily and they fail in different, instructive ways), prep notes for the <strong>Mistral Vibe Hackathon</strong> in Paris on July 18, and post-mortems on whatever I end up debugging that week.</p>
+        <p>No fixed schedule. I'll post when I have something worth writing down.</p>
       </div>
     </section>
 
