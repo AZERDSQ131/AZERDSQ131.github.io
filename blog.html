@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog — Jules YZERD</title>
+  <meta name="description" content="Jules YZERD — Blog." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛰️</text></svg>">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="header-inner">
+      <div>
+        <div class="name">Jules YZERD<sup>🛰️</sup></div>
+        <div class="tagline">// student · open-source contributor · Bordeaux, FR</div>
+      </div>
+      <nav aria-label="Navigation">
+        <a href="index.html#about">about</a>
+        <a href="index.html#mistral">mistral</a>
+        <a href="projects.html">projects</a>
+        <a href="opensource.html">open source</a>
+        <a href="blog.html" class="active">blog</a>
+        <a href="index.html#notes">notes</a>
+        <a href="index.html#contact">contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <hr />
+
+  <main>
+
+    <section>
+      <a class="back-link" href="index.html">
+        <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 8H3M7 4L3 8l4 4"/></svg>
+        Back to portfolio
+      </a>
+      <div class="section-label">Blog</div>
+      <p style="font-size:0.875rem; color:var(--muted); max-width:560px; margin-bottom:1.75rem;">
+        Notes on what I'm building, learning, and shipping — longer form than the <a href="index.html#notes" style="border-bottom:1px solid var(--subtle);">notes log</a>.
+      </p>
+
+      <ul class="blog-list">
+        <li>
+          <div class="blog-meta">
+            <span class="blog-date">2026-07-06</span>
+          </div>
+          <div class="blog-title">Hello, blog</div>
+          <p class="blog-excerpt">First post — this section just went live. Expect write-ups on AI coding agents, the Mistral Vibe Hackathon prep, and whatever I'm debugging that week.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <div class="section-label">Contact</div>
+      <p class="contact-line">
+        <a href="mailto:j.yzerd@outlook.fr">j.yzerd@outlook.fr</a>
+      </p>
+      <p style="font-size:0.83rem;color:var(--muted);margin-top:0.5rem;">Open to discussions about code, AI, and interesting projects.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <span>© <span id="y"></span> Jules YZERD</span>
+    <span>Built in HTML + CSS · Hosted on GitHub Pages</span>
+  </footer>
+
+</div>
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

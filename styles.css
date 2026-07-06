@@ -354,6 +354,43 @@ a.project-card { display: grid; }
   border-radius: var(--radius);
 }
 
+/* ─── BLOG ─── */
+.blog-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.blog-list li {
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.blog-list li:first-child { border-top: 1px solid var(--border); }
+
+.blog-meta {
+  margin-bottom: 0.35rem;
+}
+
+.blog-date {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+.blog-title {
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 0.35rem;
+}
+
+.blog-excerpt {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 560px;
+}
+
 /* ─── NOTES ─── */
 .notes-list {
   list-style: none;
