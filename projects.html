@@ -7,7 +7,7 @@
   <meta name="description" content="Jules YZERD — Projects." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛰️</text></svg>">
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -15,24 +15,16 @@
 <div class="wrap">
 
   <header>
-    <div class="header-inner">
-      <div>
-        <div class="name">Jules YZERD<sup>🛰️</sup></div>
-        <div class="tagline">// student · open-source contributor · Bordeaux, FR</div>
-      </div>
-      <nav aria-label="Navigation">
-        <a href="index.html#about">about</a>
-        <a href="index.html#mistral">mistral</a>
-        <a href="projects.html" class="active">projects</a>
-        <a href="opensource.html">open source</a>
-        <a href="blog.html">blog</a>
-        <a href="index.html#notes">notes</a>
-        <a href="index.html#contact">contact</a>
-      </nav>
-    </div>
+    <div class="name">Jules <em>Yzerd</em></div>
+    <div class="tagline">// student · building with AI agents · Bordeaux, FR</div>
+    <nav aria-label="Navigation">
+      <a href="index.html#about">about</a>
+      <a href="projects.html" class="active">projects</a>
+      <a href="opensource.html">open source</a>
+      <a href="blog.html">blog</a>
+      <a href="index.html#contact">contact</a>
+    </nav>
   </header>
-
-  <hr />
 
   <main>
 
@@ -42,97 +34,94 @@
         Back to portfolio
       </a>
       <div class="section-label">All Projects</div>
-      <p style="font-size:0.875rem; color:var(--muted); max-width:560px; margin-bottom:1.75rem;">
-        Original repos I've built and maintain. See the <a href="index.html#mistral" style="border-bottom:1px solid var(--subtle);">Mistral section</a> for projects built on top of their API, and <a href="opensource.html" style="border-bottom:1px solid var(--subtle);">Open Source</a> for contributions to other people's code.
+      <p class="prose" style="margin-bottom:0;">
+        Original repos I've built and maintain. See <a href="index.html#mistral" style="border-bottom:1px solid var(--line);">Mistral</a> for API projects, and <a href="opensource.html" style="border-bottom:1px solid var(--line);">Open Source</a> for contributions to other people's code.
       </p>
 
-      <div class="projects-grid">
+      <div class="row-list">
 
-        <a class="project-card" href="https://github.com/AZERDSQ131/mcpm" target="_blank" rel="noopener">
-          <div>
-            <div class="project-title">mcpm</div>
-            <div class="project-desc">Universal MCP server manager — install, configure, and update MCP servers across Claude Code, Cursor, VS Code, and more. Published as <code>mcp-fleet</code> on npm.</div>
+        <a class="row" href="https://github.com/AZERDSQ131/mcpm" target="_blank" rel="noopener">
+          <div class="row-main">
+            <div class="row-title">mcpm <span class="row-title-arrow">→</span></div>
+            <div class="row-desc">Universal MCP server manager — install, configure, and update MCP servers across Claude Code, Cursor, VS Code, and more. Published as <code>mcp-fleet</code> on npm.</div>
           </div>
-          <span class="project-tag">typescript · npm · 6★</span>
+          <div class="row-meta">ts · npm · 6★</div>
         </a>
 
-        <a class="project-card" href="https://github.com/AZERDSQ131/scope" target="_blank" rel="noopener">
-          <div>
-            <div class="project-title">scope</div>
-            <div class="project-desc">Neofetch for your codebase — instant tech stack, git history, file structure, and dependency overview, zero config.</div>
+        <a class="row" href="https://github.com/AZERDSQ131/scope" target="_blank" rel="noopener">
+          <div class="row-main">
+            <div class="row-title">scope <span class="row-title-arrow">→</span></div>
+            <div class="row-desc">Neofetch for your codebase — instant tech stack, git history, file structure, and dependency overview, zero config.</div>
           </div>
-          <span class="project-tag">typescript · 2★</span>
+          <div class="row-meta">ts · 2★</div>
         </a>
 
-        <a class="project-card" href="https://github.com/AZERDSQ131/tokenbar" target="_blank" rel="noopener">
-          <div>
-            <div class="project-title">tokenbar</div>
-            <div class="project-desc">Live AI token usage and cost tracking in your macOS menu bar — reads local Claude Code/Codex logs, no login or API keys.</div>
+        <a class="row" href="https://github.com/AZERDSQ131/tokenbar" target="_blank" rel="noopener">
+          <div class="row-main">
+            <div class="row-title">tokenbar <span class="row-title-arrow">→</span></div>
+            <div class="row-desc">Live AI token usage and cost tracking in your macOS menu bar — reads local Claude Code/Codex logs, no login or API keys.</div>
           </div>
-          <span class="project-tag">python</span>
+          <div class="row-meta">python</div>
         </a>
 
-        <a class="project-card" href="https://github.com/AZERDSQ131/spill" target="_blank" rel="noopener">
-          <div>
-            <div class="project-title">spill</div>
-            <div class="project-desc">macOS voice dictation via the Fn key, transcribed by Mistral Voxtral and injected at the cursor.</div>
+        <a class="row" href="https://github.com/AZERDSQ131/spill" target="_blank" rel="noopener">
+          <div class="row-main">
+            <div class="row-title">spill <span class="row-title-arrow">→</span></div>
+            <div class="row-desc">macOS voice dictation via the Fn key, transcribed by Mistral Voxtral and injected at the cursor.</div>
           </div>
-          <span class="project-tag">python</span>
+          <div class="row-meta">python</div>
         </a>
 
-        <a class="project-card" href="https://github.com/AZERDSQ131/VoxAgent" target="_blank" rel="noopener">
-          <div>
-            <div class="project-title">VoxAgent</div>
-            <div class="project-desc">Agentic voice assistant — speaks, executes bash commands via Mistral, listens to the response.</div>
+        <a class="row" href="https://github.com/AZERDSQ131/VoxAgent" target="_blank" rel="noopener">
+          <div class="row-main">
+            <div class="row-title">VoxAgent <span class="row-title-arrow">→</span></div>
+            <div class="row-desc">Agentic voice assistant — speaks, executes bash commands via Mistral, listens to the response.</div>
           </div>
-          <span class="project-tag">python</span>
+          <div class="row-meta">python</div>
         </a>
 
-        <a class="project-card" href="https://github.com/AZERDSQ131/mistral-vibe-app" target="_blank" rel="noopener">
-          <div>
-            <div class="project-title">mistral-vibe-app</div>
-            <div class="project-desc">Desktop chat interface for Mistral Vibe, built with Tauri v2. Work in progress.</div>
+        <a class="row" href="https://github.com/AZERDSQ131/mistral-vibe-app" target="_blank" rel="noopener">
+          <div class="row-main">
+            <div class="row-title">mistral-vibe-app <span class="row-title-arrow">→</span></div>
+            <div class="row-desc">Desktop chat interface for Mistral Vibe, built with Tauri v2.</div>
           </div>
-          <span class="project-tag">javascript · wip</span>
+          <div class="row-meta">js · wip</div>
         </a>
 
-        <a class="project-card" href="https://github.com/AZERDSQ131/snapcraft" target="_blank" rel="noopener">
-          <div>
-            <div class="project-title">snapcraft</div>
-            <div class="project-desc">macOS screenshot tool — global shortcut, region select, native annotation editor. Work in progress, annotation canvas has a known rendering bug.</div>
+        <a class="row" href="https://github.com/AZERDSQ131/snapcraft" target="_blank" rel="noopener">
+          <div class="row-main">
+            <div class="row-title">snapcraft <span class="row-title-arrow">→</span></div>
+            <div class="row-desc">macOS screenshot tool — global shortcut, region select, native annotation editor. Known bug in the canvas renderer.</div>
           </div>
-          <span class="project-tag">python · wip</span>
+          <div class="row-meta">python · wip</div>
         </a>
 
-        <a class="project-card" href="https://github.com/AZERDSQ131/backrooms-game" target="_blank" rel="noopener">
-          <div>
-            <div class="project-title">backrooms-game</div>
-            <div class="project-desc">3D Backrooms exploration on a fixed hand-designed map, retro 8-bit look.</div>
+        <a class="row" href="https://github.com/AZERDSQ131/backrooms-game" target="_blank" rel="noopener">
+          <div class="row-main">
+            <div class="row-title">backrooms-game <span class="row-title-arrow">→</span></div>
+            <div class="row-desc">3D Backrooms exploration on a fixed hand-designed map, retro 8-bit look.</div>
           </div>
-          <span class="project-tag">python · game</span>
+          <div class="row-meta">python · game</div>
         </a>
 
       </div>
 
       <div class="section-label" style="margin-top:2.5rem;">Private / not on GitHub</div>
-      <div class="projects-grid">
-
-        <div class="project-card">
-          <div>
-            <div class="project-title">EPONA</div>
-            <div class="project-desc">Mobile + web platform for veterinarians — Next.js dashboard and React Native field app.</div>
+      <div class="row-list">
+        <div class="row">
+          <div class="row-main">
+            <div class="row-title">EPONA</div>
+            <div class="row-desc">Vet platform — Next.js dashboard + React Native field app.</div>
           </div>
-          <span class="project-tag">private</span>
+          <div class="row-meta">private</div>
         </div>
-
-        <div class="project-card">
-          <div>
-            <div class="project-title">Local AI platform</div>
-            <div class="project-desc">Ollama on a Jetson Orin Nano Super, OpenAI-compatible API server, zero cloud dependency.</div>
+        <div class="row">
+          <div class="row-main">
+            <div class="row-title">Local AI platform</div>
+            <div class="row-desc">Ollama on a Jetson Orin Nano Super, OpenAI-compatible API, zero cloud dependency.</div>
           </div>
-          <span class="project-tag">hardware</span>
+          <div class="row-meta">hardware</div>
         </div>
-
       </div>
     </section>
 
@@ -141,7 +130,7 @@
       <p class="contact-line">
         <a href="mailto:j.yzerd@outlook.fr">j.yzerd@outlook.fr</a>
       </p>
-      <p style="font-size:0.83rem;color:var(--muted);margin-top:0.5rem;">Open to discussions about code, AI, and interesting projects.</p>
+      <p class="prose" style="margin-top:0.75rem;">Open to discussions about code, AI, and interesting projects.</p>
     </section>
 
   </main>

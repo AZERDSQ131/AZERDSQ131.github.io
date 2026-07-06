@@ -7,7 +7,7 @@
   <meta name="description" content="Jules YZERD — CV download." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛰️</text></svg>">
   <link rel="stylesheet" href="styles.css" />
   <style>
@@ -25,13 +25,11 @@
       z-index: -1;
     }
     .cv-modal {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      border-radius: 18px;
       padding: 2.25rem 2rem;
       max-width: 420px;
       width: 100%;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.12);
       text-align: center;
       opacity: 0;
       transform: translateY(10px) scale(0.98);
@@ -42,17 +40,17 @@
       height: 48px;
       margin: 0 auto 1.25rem;
       border-radius: 12px;
-      background: var(--bg);
-      border: 1px solid var(--border);
+      border: 1px solid var(--line);
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--accent);
     }
     .cv-name {
-      font-size: 1.15rem;
+      font-family: var(--serif);
+      font-size: 1.3rem;
       font-weight: 500;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.01em;
     }
     .cv-sub {
       font-family: var(--mono);
@@ -92,7 +90,7 @@
       letter-spacing: 0.02em;
       padding: 11px 20px;
       border-radius: 100px;
-      border: 1px solid var(--subtle);
+      border: 1px solid var(--line);
       color: var(--muted);
       transition: border-color 0.2s, color 0.2s;
     }
@@ -102,7 +100,7 @@
       font-size: 0.72rem;
       color: var(--muted);
     }
-    .cv-footer-note a { border-bottom: 1px solid var(--subtle); }
+    .cv-footer-note a { border-bottom: 1px solid var(--line); }
     .cv-footer-note a:hover { border-color: var(--accent); }
   </style>
 </head>
