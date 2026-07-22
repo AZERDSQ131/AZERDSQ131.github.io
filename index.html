@@ -9,6 +9,7 @@
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
 <div class="frame">
   <header class="masthead">
     <a class="identity" href="index.html"><span class="identity-mark">JY</span><span>Jules Yzerd</span><span class="identity-note">/ Bordeaux, FR</span></a>
@@ -20,6 +21,7 @@
       <div class="hero-copy"><div class="hero-kicker">Independent / 2026 / online</div><h1 class="hero-title">Building cool shit <span>at 15yo</span></h1><div class="hero-bottom"><p>Student, builder and open source contributor. I work where AI, developer tools and curiosity overlap.</p><span class="hero-scroll">Scroll to inspect ↓</span></div></div>
       <aside class="hero-rail"><span>JY—001</span><div class="rail-map"><i class="rail-line"></i></div><span>Signal received</span></aside>
     </section>
+    <div class="ticker" aria-hidden="true"><div class="ticker-track"><span>Build / Inspect / Return / Build / Inspect / Return / Build / Inspect / Return / </span><span>Build / Inspect / Return / Build / Inspect / Return / Build / Inspect / Return / </span></div></div>
 
     <section class="chapter" id="method"><div class="chapter-head"><div class="chapter-index">01 / Method</div><div><h2 class="chapter-title">Three ways to stay <span>useful.</span></h2><p class="chapter-intro">I learn by making things small enough to finish, then making the edges visible enough to improve.</p></div></div><div class="workbench"><article class="bench-item"><span class="bench-number">01</span><h3 class="bench-title">Build</h3><p class="bench-copy">Turn an annoyance into a tool. Keep the interface close to the problem.</p></article><article class="bench-item"><span class="bench-number">02</span><h3 class="bench-title">Inspect</h3><p class="bench-copy">Read the code, trace the failure, remove the unnecessary layer.</p></article><article class="bench-item"><span class="bench-number">03</span><h3 class="bench-title">Return</h3><p class="bench-copy">Send the fix upstream. Leave the system a little easier for the next person.</p></article></div></section>
 
@@ -37,6 +39,9 @@
 </div>
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+  const progress = document.querySelector('.scroll-progress');
+  let scrollFrame;
+  window.addEventListener('scroll', () => { if (scrollFrame) return; scrollFrame = requestAnimationFrame(() => { const max = document.documentElement.scrollHeight - window.innerHeight; progress.style.setProperty('--scroll-progress', max > 0 ? window.scrollY / max : 0); scrollFrame = null; }); }, { passive: true });
   const items = document.querySelectorAll('.chapter, .bench-item, .now-row, .specimen, .ledger-row, .dispatch');
   items.forEach((item, i) => { item.classList.add('reveal'); if (i % 3 === 1) item.classList.add('delay-1'); if (i % 3 === 2) item.classList.add('delay-2'); });
   const observer = new IntersectionObserver((entries, obs) => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); obs.unobserve(entry.target); } }), { threshold: .12 });
