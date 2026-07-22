@@ -113,6 +113,7 @@ em { font-style: normal; }
 
 #now .chapter-head, #ledger .chapter-head { grid-template-columns: 1fr; }
 #method .chapter-head { grid-template-columns: 1fr; padding-left: 0; margin-left: -.1rem; }
+#dispatch .chapter-head, #dispatch .dispatch { grid-template-columns: 1fr; }
 #catalog .chapter-head { position: relative; grid-template-columns: 1fr; padding-top: 1.9rem; padding-left: 2rem; }
 #catalog .chapter-index { position: static; margin-bottom: 1.5rem; }
 .catalog-grid { grid-auto-flow: dense; }
