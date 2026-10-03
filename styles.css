@@ -123,29 +123,6 @@ html[data-theme="dark"] .btn-primary:hover { background: #d8d8de; }
 html[data-theme="dark"] .btn-ghost { border-color: rgb(255 255 255 / .26); }
 .btn-ghost:hover { border-color: var(--ink); }
 
-#theme-toggle {
-  position: fixed;
-  top: 1.25rem;
-  right: 1.25rem;
-  z-index: 60;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.1rem;
-  height: 2.1rem;
-  border-radius: 999px;
-  border: 1px solid rgb(0 0 0 / .22);
-  background: transparent;
-  color: var(--muted);
-  cursor: pointer;
-  transition: color .2s var(--ease), border-color .2s var(--ease);
-}
-html[data-theme="dark"] #theme-toggle { border-color: rgb(255 255 255 / .26); }
-#theme-toggle:hover { color: var(--ink); }
-#theme-toggle .icon-moon { display: none; }
-html[data-theme="dark"] #theme-toggle .icon-moon { display: block; }
-html[data-theme="dark"] #theme-toggle .icon-sun { display: none; }
-
 /* ---------- Motion ---------- */
 
 @media (prefers-reduced-motion: no-preference) {
